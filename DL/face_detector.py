@@ -38,8 +38,9 @@ def detect_faces_cascade(img, color = (0, 0, 255)):
 
     faces = F_CASCADE.detectMultiScale(gray, 1.3, 5)
 
-    for (x,y,w,h) in faces:
-        cv.rectangle(img, (x, y), (x+w, y+h), color, 2)   
+    
+    #for (x,y,w,h) in faces:
+    #    cv.rectangle(img, (x, y), (x+w, y+h), color, 2)   
 
     return faces, img
 

@@ -38,7 +38,10 @@ def classify_faces(img):
     return img
 
 def main():
-    webcm = cv.VideoCapture(0)
+    webcm = cv.VideoCapture(1)
+
+    webcm.grab()
+    webcm.retrieve()
 
     cv.namedWindow(WIN_NAME)
 
@@ -48,7 +51,8 @@ def main():
         if key == ord('q'):
             break
 
-        ret, frame = webcm.read()
+        webcm.grab()
+        ret, frame = webcm.retrieve()
         img_cascade = classify_faces(frame)
 
         cv.imshow(WIN_NAME, img_cascade)
